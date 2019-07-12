@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>locaoStorage</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            if(window.localStorage){
+                if(localStorage.getItem('sumlate') == null ){
+                    localStorage.setItem('sumlate', '0');
+                }else {
+                    var temp1 = localStorage.getItem('sumlate');
+                    document.getElementById("ale").innerText = temp1;
+                }
+            }
+        }
+
+        function add() {
+            var temp2 = parseInt(document.getElementById("ale").innerText);
+            temp2 += 1;
+            localStorage.setItem('sumlate', temp2);
+            document.getElementById("ale").innerText = temp2;
+        }
+    </script>
+</head>
+<body>
+<label id="ale">0</label>
+<input type="button" value="+" onclick="add()" />
+</body>
+</html>
